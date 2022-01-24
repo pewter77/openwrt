@@ -1,0 +1,21 @@
+name: Sync Fork
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 13 * * 1"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fork Sync
+      - uses: tgymnich/fork-sync@v1.4
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          owner: pewter77
+          base: master
+          head: master
