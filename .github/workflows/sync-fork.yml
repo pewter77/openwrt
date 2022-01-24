@@ -15,7 +15,6 @@ jobs:
       - name: Fork Sync
         uses: tgymnich/fork-sync@v1.4
         with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
           owner: pewter77
           base: master
           head: master
